@@ -7,4 +7,5 @@ public interface Character {
     public String getImagePath();
     public int getPointValue();
     public int getTimeUp();
+    public int getRanking();
 }
