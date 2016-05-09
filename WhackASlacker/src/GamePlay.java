@@ -11,8 +11,8 @@ import javax.swing.border.*;
 
 public class GamePlay{
     //Game Stats
-    public volatile int score;
-    public volatile int time;
+    private volatile int score;
+    private volatile int time;
     private JFrame frame;
     private boolean gameRunning;
     private JTextArea timeField;
@@ -71,11 +71,13 @@ public class GamePlay{
         gameRunning = true;
         begin();
     }
+
     public void begin(){
        /* while(time > 30 && gameRunning){
 
         }*/
 
+        scoreField.setText("" + score);
 
         Thread timerThread = new Thread(new Runnable() {
             @Override
@@ -102,6 +104,7 @@ public class GamePlay{
             h.start();
         }
     }
+
     public void gameEnd(){
 
         /*
@@ -111,4 +114,16 @@ public class GamePlay{
         scoreField.setText("" + score);*/
     }
 
+
+
+    public synchronized void addPoints(int num){
+        score += num;
+        scoreField.setText("" + score);
+    }
+    public synchronized void addTime(int num){
+        time += num;
+    }
+    public synchronized int getTime(){
+        return time;
+    }
 }

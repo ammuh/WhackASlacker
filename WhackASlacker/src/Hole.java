@@ -7,11 +7,14 @@ public class Hole extends Thread{
      JLabel hPanel;
      JFrame mframe;
      GamePlay game;
-    private Character[] characters = {};
+    private Character[] characters;
     public Hole(JLabel hole, JFrame main, GamePlay g){
+
         hPanel = hole;
         mframe = main;
         game = g;
+        characters = new Character[1];
+        characters[0]  = new Ammar(game, mframe, hPanel);
     }
 
     public void run(){
@@ -21,31 +24,11 @@ public class Hole extends Thread{
             // Should not happen
             throw new AssertionError(e);
         }
-        while(game.time > -1){
-            synchronized (hPanel){
-                this.hPanel.setText(" POP ");
+        while(game.getTime() > -1){
 
-                try {
-                    this.sleep(3000);
-                } catch (InterruptedException e) {
-                    // Should not happen
-                    throw new AssertionError(e);
-                }
-                this.hPanel.setText("_______");
-
-            }
-            try {
-                this.sleep((int)(Math.random()*3000));
-            } catch (InterruptedException e) {
-                // Should not happen
-                throw new AssertionError(e);
-            }
-
-        /*
-        Character c = characters[(int)Math.random()*characters.length];
-        //hPanel = new JPanel();
-        mframe.setVisible(true);*/
-
+                Character c = characters[(int)Math.random()*characters.length];
+                c.pop(this);
+                //hPanel = new JPanel();
         }
     }
 

@@ -7,5 +7,6 @@ public interface Character {
     public int getPointValue();
     public int getTimeUp();
     public int getRanking();
+    public void pop(Thread t);
 
 }
