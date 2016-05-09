@@ -67,7 +67,7 @@ public class WhackASlacker{
         mainFrame.setVisible(true);
     }
     private void startGame(){
-        GamePlay g = new GamePlay(this.mainFrame);
+        new GamePlay(this.mainFrame);
     }
     private void endPanelSet(){
 
