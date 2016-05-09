@@ -52,7 +52,7 @@ public class GamePlay{
         JPanel grid = new JPanel(new GridLayout(0,4));
 
         for (int i = 0; i < 12; i++){
-            JLabel j = new JLabel("     ");
+            JLabel j = new JLabel("_______");
             j.setHorizontalAlignment(JLabel.CENTER);
             holes[i] = j;
             grid.add(j);

@@ -17,20 +17,22 @@ public class Hole extends Thread{
     public void run(){
         while(game.time > -1){
             try {
-                Thread.sleep((int)Math.random()*3000 +2);
+                this.sleep((int)Math.random()*3000 +2);
             } catch (InterruptedException e) {
                 // Should not happen
                 throw new AssertionError(e);
             }
             synchronized (hPanel){
                 this.hPanel.setText(" POP ");
+
                 try {
-                    Thread.sleep(2000);
+                    this.sleep(2000);
                 } catch (InterruptedException e) {
                     // Should not happen
                     throw new AssertionError(e);
                 }
-                this.hPanel.setText("     ");
+                this.hPanel.setText("_______");
+
             }
 
 
