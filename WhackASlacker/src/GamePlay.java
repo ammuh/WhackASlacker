@@ -103,9 +103,7 @@ public class GamePlay{
         }
     }
     public void gameEnd(){
-        for (Hole h : holeThreads) {
-            h.interrupt();
-        }
+
         /*
         time = 30;
         score = 0;

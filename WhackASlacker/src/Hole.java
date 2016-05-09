@@ -4,9 +4,9 @@ import javax.swing.*;
  * Created by ammu on 5/8/16.
  */
 public class Hole extends Thread{
-    private JLabel hPanel;
-    private JFrame mframe;
-    private GamePlay game;
+     JLabel hPanel;
+     JFrame mframe;
+     GamePlay game;
     private Character[] characters = {};
     public Hole(JLabel hole, JFrame main, GamePlay g){
         hPanel = hole;
@@ -15,18 +15,18 @@ public class Hole extends Thread{
     }
 
     public void run(){
+        try {
+            this.sleep((int)(Math.random()*3000));
+        } catch (InterruptedException e) {
+            // Should not happen
+            throw new AssertionError(e);
+        }
         while(game.time > -1){
-            try {
-                this.sleep((int)Math.random()*3000 +2);
-            } catch (InterruptedException e) {
-                // Should not happen
-                throw new AssertionError(e);
-            }
             synchronized (hPanel){
                 this.hPanel.setText(" POP ");
 
                 try {
-                    this.sleep(2000);
+                    this.sleep(3000);
                 } catch (InterruptedException e) {
                     // Should not happen
                     throw new AssertionError(e);
@@ -34,8 +34,12 @@ public class Hole extends Thread{
                 this.hPanel.setText("_______");
 
             }
-
-
+            try {
+                this.sleep((int)(Math.random()*3000));
+            } catch (InterruptedException e) {
+                // Should not happen
+                throw new AssertionError(e);
+            }
 
         /*
         Character c = characters[(int)Math.random()*characters.length];
