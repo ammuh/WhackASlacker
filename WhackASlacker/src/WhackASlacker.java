@@ -20,38 +20,6 @@ public class WhackASlacker{
         mainFrame.setResizable(false);
         mainFrame.setVisible(true);
         mainScreenSet();
-
-        /*
-        startButton.addActionListener(this);
-
-        timeLabel = new JLabel("Time Left:");
-        pane.add(timeLabel);
-
-        timeArea = new JTextArea(1, 5);
-        timeArea.setEditable(false);
-        pane.add(timeArea);
-        timeArea.setVisible(true);
-
-        scoreLabel = new JLabel("Score:");
-        pane.add(scoreLabel);
-
-        scoreArea = new JTextArea(1, 5);
-        scoreArea.setEditable(false);
-        pane.add(scoreArea);
-        scoreArea.setVisible(true);
-
-        buttons = new JButton[35];
-        for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new JButton(OFF_STRING);
-            buttons[i].setOpaque(true);
-            buttons[i].setFont(font);
-            buttons[i].setBackground(OFF_COLOR);
-            pane.add(buttons[i]);
-            buttons[i].addActionListener(this);
-        }
-
-        frame.setContentPane(pane);
-        frame.setVisible(true);*/
     }
     private void mainScreenSet(){
         JPanel pane1 = new JPanel();

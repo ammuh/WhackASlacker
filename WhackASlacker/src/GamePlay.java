@@ -21,15 +21,15 @@ public class GamePlay{
     private Hole[] holeThreads = new Hole[12];
 
     public GamePlay(JFrame f){
+        //Initialize game vars and essential UI vars
         frame = f;
         score = 0;
         time = 30;
 
-        JPanel info = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 10));
 
+        JPanel info = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 10));
         //Info Layout
         info.setBorder(new EmptyBorder(30, 30, 30, 30));
-
         info.add(Box.createHorizontalStrut(100));
 
         JLabel timeLabel = new JLabel("Time Left:");
@@ -73,9 +73,6 @@ public class GamePlay{
     }
 
     public void begin(){
-       /* while(time > 30 && gameRunning){
-
-        }*/
 
         scoreField.setText("" + score);
 
