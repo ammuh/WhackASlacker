@@ -23,7 +23,7 @@ public class Ammar implements Character {
         frame = f;
         panel = p;
     }
-    
+
     public void pop(Thread t){
         frame.setVisible(true);
         panel.setText(" POP ");
