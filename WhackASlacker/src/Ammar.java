@@ -9,22 +9,23 @@ public class Ammar implements Character {
     //GUI Elements
     private GamePlay game;
     private JFrame frame;
-    private JLabel panel;
+    private JLayeredPane panel;
     //Res info
     private final String soundPath = "res/aud/pop.wav";
     private final String imgPath = "res/img/ammar.png";
     //GamePlay Info
     private final int points = 10;
-    private final int timeUp = 1000;
+    private final int timeUp = 1000; //Time in Milliseconds
     private final int ranking = 1;
 
-    public Ammar(GamePlay g, JFrame f, JLabel p){
+    public Ammar(GamePlay g, JFrame f, JLayeredPane p){
         game = g;
         frame = f;
         panel = p;
     }
+    public void pop(Thread t){}
 
-    public void pop(Thread t){
+    /*public void pop(Thread t){
         frame.setVisible(true);
         panel.setText(" POP ");
         playSound(getSoundPath());
@@ -57,7 +58,7 @@ public class Ammar implements Character {
             // Should not happen
             throw new AssertionError(e);
         }
-    }
+    }*/
 
     private void playSound(String path) {
         new Thread(new Runnable() {

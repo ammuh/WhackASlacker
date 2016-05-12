@@ -17,7 +17,7 @@ public class GamePlay{
     private boolean gameRunning;
     private JTextArea timeField;
     private JTextArea scoreField;
-    private JLabel[] holes = new JLabel[12];
+    private JLayeredPane[] holes = new JLayeredPane[12];
     private Hole[] holeThreads = new Hole[12];
 
     public GamePlay(JFrame f){
@@ -52,8 +52,7 @@ public class GamePlay{
         JPanel grid = new JPanel(new GridLayout(0,4));
 
         for (int i = 0; i < 12; i++){
-            JLabel j = new JLabel("_______");
-            j.setHorizontalAlignment(JLabel.CENTER);
+        	JLayeredPane j = new JLayeredPane();
             holes[i] = j;
             grid.add(j);
             holeThreads[i] = new Hole(j, frame, this);

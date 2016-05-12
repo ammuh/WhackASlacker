@@ -4,11 +4,11 @@ import javax.swing.*;
  * Created by ammu on 5/8/16.
  */
 public class Hole extends Thread{
-     JLabel hPanel;
+	JLayeredPane hPanel;
      JFrame mframe;
      GamePlay game;
     private Character[] characters;
-    public Hole(JLabel hole, JFrame main, GamePlay g){
+    public Hole(JLayeredPane hole, JFrame main, GamePlay g){
 
         hPanel = hole;
         mframe = main;
@@ -27,7 +27,7 @@ public class Hole extends Thread{
         while(game.getTime() > -1){
 
                 Character c = characters[(int)Math.random()*characters.length];
-                c.pop(this);
+                //c.pop(this);
                 //hPanel = new JPanel();
         }
     }
