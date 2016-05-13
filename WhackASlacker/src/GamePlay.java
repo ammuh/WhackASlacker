@@ -4,10 +4,13 @@
 import com.sun.xml.internal.ws.api.*;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.imageio.ImageIO;
+import java.io.File;
 
 public class GamePlay{
     //Game Stats
@@ -49,12 +52,17 @@ public class GamePlay{
         scoreField.setVisible(true);
 
         JPanel game = new JPanel(new BorderLayout());
-        JPanel grid = new JPanel(new GridLayout(0,4));
+        JPanel grid = new JPanel(new GridLayout(3,4));
 
         for (int i = 0; i < 12; i++){
         	JLayeredPane j = new JLayeredPane();
             holes[i] = j;
-            grid.add(j);
+            j.add(new JLabel(new ImageIcon("src/res/img/desk.png")), new Integer(2), 0);
+            ImageLabel img = new ImageLabel();
+
+
+            img.setIcon(new ImageIcon("src/res/img/desk.png"));
+            grid.add(img);
             holeThreads[i] = new Hole(j, frame, this);
         }
 
@@ -121,4 +129,26 @@ public class GamePlay{
     public synchronized int getTime(){
         return time;
     }
+
+    private class ImageLabel extends JLabel{
+        private Image _myimage;
+
+        public ImageLabel(){
+            super();
+        }
+
+        public void setIcon(Icon icon) {
+            super.setIcon(icon);
+            if (icon instanceof ImageIcon)
+            {
+                _myimage = ((ImageIcon) icon).getImage();
+            }
+        }
+
+        @Override
+        public void paint(Graphics g){
+            g.drawImage(_myimage, 0, 0, this.getWidth(), this.getHeight(), null);
+        }
+    }
 }
+

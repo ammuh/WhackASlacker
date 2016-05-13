@@ -28,7 +28,7 @@ public class Ammar implements Character {
     /*public void pop(Thread t){
         frame.setVisible(true);
         panel.setText(" POP ");
-        playSound(getSoundPath());
+        WhackTools.playSound(getSoundPath());
         MouseAdapter m = new MouseAdapter()
         {
             boolean slackerHit = false;
@@ -60,24 +60,7 @@ public class Ammar implements Character {
         }
     }*/
 
-    private void playSound(String path) {
-        new Thread(new Runnable() {
-            // The wrapper thread is unnecessary, unless it blocks on the
-            // Clip finishing; see comments.
-            public void run() {
-                try {
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(this.getClass().getResource(path));
-                    AudioFormat format = inputStream.getFormat();
-                    DataLine.Info info = new DataLine.Info(Clip.class, format);
-                    Clip clip = (Clip)AudioSystem.getLine(info);
-                    clip.open(inputStream);
-                    clip.start();
-                } catch (Exception e) {
-                    System.err.println(e.getMessage());
-                }
-            }
-        }).start();
-    }
+
 
     @Override
     public String getSoundPath() {
