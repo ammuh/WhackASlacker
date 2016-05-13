@@ -20,9 +20,9 @@ public class GamePlay{
     private JLayeredPane[] holes = new JLayeredPane[12];
     private Hole[] holeThreads = new Hole[12];
 
-    public GamePlay(JFrame f){
+    public GamePlay(WhackASlacker w){
         //Initialize game vars and essential UI vars
-        frame = f;
+        frame = w.getFrame();
         score = 0;
         time = 30;
 
@@ -67,11 +67,10 @@ public class GamePlay{
         //Frame Init
         frame.setContentPane(panel);
         frame.setVisible(true);
-        gameRunning = true;
-        begin();
     }
 
     public void begin(){
+        gameRunning = true;
 
         scoreField.setText("" + score);
 
