@@ -29,7 +29,6 @@ public class GamePlay{
         score = 0;
         time = 30;
 
-
         JPanel info = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 10));
         //Info Layout
         info.setBorder(new EmptyBorder(30, 30, 30, 30));
@@ -52,20 +51,22 @@ public class GamePlay{
         scoreField.setVisible(true);
 
         JPanel game = new JPanel(new BorderLayout());
-        JPanel grid = new JPanel(new GridLayout(3,4));
+        JPanel grid = new JPanel(new GridLayout(3,4, 0, 0));
+
+        JPanel[] j = new JPanel[12];
 
         for (int i = 0; i < 12; i++){
-        	JLayeredPane j = new JLayeredPane();
-            holes[i] = j;
-            j.add(new JLabel(new ImageIcon("src/res/img/desk.png")), new Integer(2), 0);
-            ImageLabel img = new ImageLabel();
-
-
-            img.setIcon(new ImageIcon("src/res/img/desk.png"));
-            grid.add(img);
-            holeThreads[i] = new Hole(j, frame, this);
+            j[i] = new JPanel();
+            grid.add(j[i]);
         }
 
+        for (int i = 0; i < 12; i++){
+            j[i].add(new JLabel(new ImageIcon(ImgUtils.scaleImage(150, 100 ,"src/res/img/desk.png"))));
+
+
+            JPanel p = new JPanel();
+            //holeThreads[i] = new Hole(j, frame, this);
+        }
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         game.add(grid, BorderLayout.CENTER);
@@ -97,7 +98,6 @@ public class GamePlay{
                     }
                 }
                 gameEnd();
-
             }
         });
 
