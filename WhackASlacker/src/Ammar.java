@@ -66,7 +66,7 @@ public class Ammar implements Character {
     public String getSoundPath() {
         return soundPath;
     }
-    @Override
+
     public String getImagePath() {
         return imgPath;
     }
@@ -81,5 +81,10 @@ public class Ammar implements Character {
     @Override
     public int getRanking() {
         return ranking;
+    }
+
+    @Override
+    public String getSpritePath() {
+        return null;
     }
 }

@@ -15,6 +15,7 @@ import java.awt.RenderingHints;
  * Created by ammu on 5/12/16.
  */
 public abstract class WhackTools {
+
     public static BufferedImage scaleImage(int WIDTH, int HEIGHT, String filename) {
         BufferedImage bi = null;
         try {
@@ -29,7 +30,19 @@ public abstract class WhackTools {
         }
         return bi;
     }
-
+    public static BufferedImage scaleImage(int WIDTH, int HEIGHT, BufferedImage img) {
+        BufferedImage bi = null;
+        try {
+            bi = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2d = (Graphics2D) bi.createGraphics();
+            g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY));
+            g2d.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return bi;
+    }
     public static BufferedImage makeTransparentImage(BufferedImage br) {
         for (int i = 0; i < br.getHeight(); i++) {
             for (int j = 0; j < br.getWidth(); j++) {

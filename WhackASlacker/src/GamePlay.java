@@ -67,7 +67,7 @@ public class GamePlay{
             l.setBounds(0, 0, 150, 100);
             JLabel jl = new JLabel();
             jl.setBounds(0,0,150,100);
-            jl.setIcon(new ImageIcon(ImgUtils.scaleImage(150, 100, "src/res/img/desk.png")));
+            //jl.setIcon(new ImageIcon(ImgUtils.scaleImage(150, 100, "src/res/img/desk.png")));
             //l.add(new JLabel(new ImageIcon(ImgUtils.scaleImage(150, 100 ,"src/res/img/ammar.png"))), new Integer(0), 0);
             l.add(pan, new Integer(0), 0);
             grid.add(l);
