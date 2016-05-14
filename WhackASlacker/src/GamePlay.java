@@ -56,17 +56,24 @@ public class GamePlay{
         JPanel[] j = new JPanel[12];
 
         for (int i = 0; i < 12; i++){
-            j[i] = new JPanel();
-            grid.add(j[i]);
+            JLayeredPane l = new JLayeredPane();
+            l.setPreferredSize(new Dimension(150,100));
+            JPanel pan = new JPanel(){
+                @Override
+                public Dimension getPreferredSize() {
+                    return new Dimension(150, 100);
+                };
+            };
+            l.setBounds(0, 0, 150, 100);
+            JLabel jl = new JLabel();
+            jl.setBounds(0,0,150,100);
+            jl.setIcon(new ImageIcon(ImgUtils.scaleImage(150, 100, "src/res/img/desk.png")));
+            //l.add(new JLabel(new ImageIcon(ImgUtils.scaleImage(150, 100 ,"src/res/img/ammar.png"))), new Integer(0), 0);
+            l.add(pan, new Integer(0), 0);
+            grid.add(l);
         }
 
-        for (int i = 0; i < 12; i++){
-            j[i].add(new JLabel(new ImageIcon(ImgUtils.scaleImage(150, 100 ,"src/res/img/desk.png"))));
 
-
-            JPanel p = new JPanel();
-            //holeThreads[i] = new Hole(j, frame, this);
-        }
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         game.add(grid, BorderLayout.CENTER);

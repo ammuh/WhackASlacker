@@ -3,7 +3,7 @@
  */
 public interface Character {
     public String getSoundPath();
-    public String getImagePath();
+    public String getSpritePath();
     public int getPointValue();
     public int getTimeUp();
     public int getRanking();
