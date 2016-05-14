@@ -25,13 +25,10 @@ public class HoleSprite extends JLabel{
         HoleSprite h = new HoleSprite(50, 50, 40);
         mainFrame.add(h);
         for(int i = 0; i < 15; i++){
-            h.animate("src/res/img/runningGrant.png", 294, 165);
+            h.animate("src/res/img/runningGrant.png", 294, 165, 64);
         }
 
-
-
     }
-
 
     public HoleSprite(int pwidth, int pheight, int fps){
         super();
@@ -50,7 +47,7 @@ public class HoleSprite extends JLabel{
 
     }
 
-    public void animate(String path, int fh, int fw){
+    public void animate(String path, int fh, int fw, int numFrames){
         try{
             final BufferedImage pic;
             final int rows, cols;
@@ -58,14 +55,16 @@ public class HoleSprite extends JLabel{
             rows = pic.getHeight()/fh;
             cols = pic.getWidth()/fw;
             System.out.println(rows + " and " + cols);
-            HoleSprite h = this;
             for(int row = 0; row < rows; row++){
                 for(int col = 0; col < cols; col++){
+                    if(row == rows - 1 && col > (numFrames%cols)-1){
+                        return;
+                    }
                     try{
                         BufferedImage frame = WhackTools.scaleImage(width, height, pic.getSubimage(col*fw, row*fh, fw, fh));
-                        synchronized (h){
-                            h.setIcon(new ImageIcon(frame));
-                            System.out.println("Frame " + (row* cols + col));
+                        synchronized (this){
+                            this.setIcon(new ImageIcon(frame));
+                            System.out.println("Frame " + (row* cols + col +1));
                             Thread.sleep(sleepTime);
                         }
                     }catch (InterruptedException i){
