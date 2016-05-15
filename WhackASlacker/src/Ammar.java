@@ -17,7 +17,7 @@ public class Ammar extends Character {
     //Audio info
     private final String soundPath = "res/aud/pop.wav";
     //Sprites
-    private final String imgPath = "res/img/ammar.png";
+    private final String imgPath = "res/img/ammarSprites.png";
     private final BufferedImage[] spriteFrames;
     private final int numFrames = 10;
     private final int fheight = 10;
@@ -47,13 +47,19 @@ public class Ammar extends Character {
     }
 
     @Override
-    public void aniUp(JLabel l) {
+    public void aniUp(Hole h) {
+        JLabel l = h.getLabel();
+        while(){
 
+        }
     }
 
     @Override
-    public void aniDown(JLabel l) {
+    public void aniDown(Hole h) {
+        JLabel l = h.getLabel();
+        while(){
 
+        }
     }
 
     @Override

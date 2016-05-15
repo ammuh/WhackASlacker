@@ -33,7 +33,7 @@ public abstract class Character {
             }
         };
 
-        aniUp(hole.getLabel());
+        aniUp(hole);
         hole.getLabel().addMouseListener(m);
         try {
             hole.sleep(getTimeUp());
@@ -42,7 +42,7 @@ public abstract class Character {
             throw new AssertionError(e);
         }
         hole.getLabel().removeMouseListener(m);
-        aniDown(hole.getLabel());
+        aniDown(hole);
 
         try {
             hole.sleep((int)(Math.random()*3000));
@@ -81,8 +81,8 @@ public abstract class Character {
     }
 
     public abstract void reward(GamePlay g);
-    public abstract void aniUp(JLabel l);
-    public abstract void aniDown(JLabel l);
+    public abstract void aniUp(Hole h);
+    public abstract void aniDown(Hole h);
     public abstract void setPopStatus(Boolean b);
     public abstract String getSoundPath();
     public abstract String getSpritePath();
