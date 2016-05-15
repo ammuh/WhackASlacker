@@ -30,27 +30,14 @@ public class Ammar extends Character {
     public Ammar(GamePlay g, JFrame fr){
         game = g;
         frame = fr;
-        spriteFrames = new BufferedImage[numFrames];
-        BufferedImage pic;
-        try {
-            pic = ImageIO.read(new File(getImagePath()));
-
+        BufferedImage img;
+        try{
+            img = ImageIO.read(new File(getImagePath()));
         }catch (IOException i){
-            pic = null;
-            System.out.println(i);
+            img = null;
+            i.printStackTrace();
         }
-        int rows = pic.getHeight()/fheight;
-        int cols = pic.getWidth()/fwidth;
-
-        System.out.println(rows + " and " + cols);
-        int pos = 0;
-        for(int row = 0; row < rows; row++){
-            for(int col = 0; col < cols; col++){
-                if(!(row == rows - 1 && col > (numFrames%cols)-1)){
-                    spriteFrames[0] = pic.getSubimage(col*fheight, row*fheight, fwidth, fheight);
-                }
-            }
-        }
+        spriteFrames = getBufferedFrames(img, numFrames, fheight, fwidth);
     }
 
     public void pop(Thread t, HoleSprite h){
