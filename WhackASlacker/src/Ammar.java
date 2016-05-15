@@ -9,7 +9,7 @@ import javax.sound.sampled.*;
 /**
  * Created by ammu on 5/9/16.;
  */
-public class Ammar implements Character {
+public class Ammar extends Character {
     //GUI Elements
     private GamePlay game;
     private JFrame frame;
