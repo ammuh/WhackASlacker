@@ -24,6 +24,10 @@ public class HoleSprite extends JLabel{
         mainFrame.setVisible(true);
         HoleSprite h = new HoleSprite(50, 50, 40);
         mainFrame.add(h);
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException i ){System.out.print(i);}
+
         for(int i = 0; i < 15; i++){
             h.animate("src/res/img/runningGrant.png", 294, 165, 64);
         }
@@ -34,7 +38,7 @@ public class HoleSprite extends JLabel{
         super();
         width = pwidth;
         height = pheight;
-        this.setPreferredSize(new Dimension(width, height));
+        //this.setPreferredSize(new Dimension(width, height));
         sleepTime = 1000/fps;
 
         try{

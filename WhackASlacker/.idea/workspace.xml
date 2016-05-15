@@ -26,14 +26,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HoleSprite.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WhackASlacker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WhackASlacker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#2272#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#WhackASlacker#0;class#WhackASlacker#0" expanded="false" />
+                <element signature="method#mainScreenSet#0;class#WhackASlacker#0" expanded="false" />
+                <element signature="method#startGame#0;class#WhackASlacker#0" expanded="false" />
+                <element signature="method#endPanelSet#0;class#WhackASlacker#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="class#1794:1968" expanded="false" />
+                <element signature="e#2100#2183#0" expanded="false" />
+                <element signature="method#begin#0;class#GamePlay#0" expanded="false" />
+                <element signature="method#gameEnd#0;class#GamePlay#0" expanded="false" />
+                <element signature="method#addPoints#0;class#GamePlay#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hole.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Hole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HoleSprite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HoleSprite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="981">
+              <caret line="77" column="13" selection-start-line="55" selection-start-column="12" selection-end-line="77" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#HoleSprite#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ammar.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ammar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1727#1728#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WhackTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WhackTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding>
+                <element signature="method#scaleImage#0;class#WhackTools#0" expanded="false" />
+                <element signature="method#scaleImage#1;class#WhackTools#0" expanded="false" />
+                <element signature="method#makeTransparentImage#0;class#WhackTools#0" expanded="false" />
+                <element signature="method#getImageLabel#0;class#WhackTools#0" expanded="false" />
+                <element signature="method#playSound#0;class#WhackTools#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -59,15 +143,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class" />
-        <option value="$PROJECT_DIR$/src/Hole.java" />
         <option value="$PROJECT_DIR$/src/WhackASlacker.java" />
         <option value="$PROJECT_DIR$/src/AniSprite.java" />
-        <option value="$PROJECT_DIR$/src/Character.java" />
         <option value="$PROJECT_DIR$/src/ImgUtils.java" />
-        <option value="$PROJECT_DIR$/src/WhackTools.java" />
-        <option value="$PROJECT_DIR$/src/GamePlay.java" />
-        <option value="$PROJECT_DIR$/src/Ammar.java" />
         <option value="$PROJECT_DIR$/src/HoleSprite.java" />
+        <option value="$PROJECT_DIR$/src/Character.java" />
+        <option value="$PROJECT_DIR$/src/GamePlay.java" />
+        <option value="$PROJECT_DIR$/src/Hole.java" />
+        <option value="$PROJECT_DIR$/src/WhackTools.java" />
+        <option value="$PROJECT_DIR$/src/Ammar.java" />
       </list>
     </option>
   </component>
@@ -627,12 +711,12 @@
       <workItem from="1462742320550" duration="19787000" />
       <workItem from="1463112999670" duration="2732000" />
       <workItem from="1463117499618" duration="15000" />
-      <workItem from="1463117541275" duration="20337000" />
+      <workItem from="1463117541275" duration="23154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62501000" />
+    <option name="totallyTimeSpent" value="65318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -646,7 +730,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37406856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35171387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19672132" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -678,7 +762,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -706,9 +790,11 @@
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="class#1794:1968" expanded="false" />
+            <element signature="e#2100#2183#0" expanded="false" />
+            <element signature="method#begin#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#gameEnd#0;class#GamePlay#0" expanded="false" />
             <element signature="method#addPoints#0;class#GamePlay#0" expanded="false" />
-            <element signature="class#ImageLabel#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -718,9 +804,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding>
-            <element signature="method#loop#0;class#Hole#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -771,77 +855,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WhackASlacker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="39" column="35" selection-start-line="35" selection-start-column="8" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="369">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
             <element signature="e#0#2272#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1760#1761#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="method#WhackASlacker#0;class#WhackASlacker#0" expanded="false" />
+            <element signature="method#mainScreenSet#0;class#WhackASlacker#0" expanded="false" />
+            <element signature="method#startGame#0;class#WhackASlacker#0" expanded="false" />
+            <element signature="method#endPanelSet#0;class#WhackASlacker#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
+    <entry file="file://$PROJECT_DIR$/src/WhackTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        <state relative-caret-position="198">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#addPoints#0;class#GamePlay#0" expanded="false" />
-            <element signature="class#ImageLabel#0;class#GamePlay#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ammar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2093#2094#0" expanded="true" />
+            <element signature="method#scaleImage#0;class#WhackTools#0" expanded="false" />
+            <element signature="method#scaleImage#1;class#WhackTools#0" expanded="false" />
+            <element signature="method#makeTransparentImage#0;class#WhackTools#0" expanded="false" />
+            <element signature="method#getImageLabel#0;class#WhackTools#0" expanded="false" />
+            <element signature="method#playSound#0;class#WhackTools#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="162">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WhackTools.java">
+    <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="536">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="method#loop#0;class#Hole#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="class#1794:1968" expanded="false" />
+            <element signature="e#2100#2183#0" expanded="false" />
+            <element signature="method#begin#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#gameEnd#0;class#GamePlay#0" expanded="false" />
+            <element signature="method#addPoints#0;class#GamePlay#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HoleSprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+        <state relative-caret-position="981">
+          <caret line="77" column="13" selection-start-line="55" selection-start-column="12" selection-end-line="77" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#HoleSprite#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1727#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.Nullable;
+
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -30,6 +32,7 @@ public abstract class WhackTools {
         }
         return bi;
     }
+
     public static BufferedImage scaleImage(int WIDTH, int HEIGHT, BufferedImage img) {
         BufferedImage bi = null;
         try {
@@ -43,6 +46,7 @@ public abstract class WhackTools {
         }
         return bi;
     }
+
     public static BufferedImage makeTransparentImage(BufferedImage br) {
         for (int i = 0; i < br.getHeight(); i++) {
             for (int j = 0; j < br.getWidth(); j++) {
@@ -58,6 +62,7 @@ public abstract class WhackTools {
         }
         return br;
     }
+
     public static JLabel getImageLabel(String path){
         try {
             JLabel picLabel;
@@ -70,7 +75,7 @@ public abstract class WhackTools {
         }
     }
 
-    private void playSound(String path) {
+    public static void playSound(String path) {
         new Thread(new Runnable() {
             // The wrapper thread is unnecessary, unless it blocks on the
             // Clip finishing; see comments.

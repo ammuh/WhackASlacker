@@ -8,5 +8,4 @@ public interface Character {
     public int getTimeUp();
     public int getRanking();
     public void pop(Thread t);
-
 }

@@ -117,11 +117,6 @@ public class GamePlay{
 
     public void gameEnd(){
 
-        /*
-        time = 30;
-        score = 0;
-        timeField.setText("" + time);
-        scoreField.setText("" + score);*/
     }
 
 
@@ -137,25 +132,5 @@ public class GamePlay{
         return time;
     }
 
-    private class ImageLabel extends JLabel{
-        private Image _myimage;
-
-        public ImageLabel(){
-            super();
-        }
-
-        public void setIcon(Icon icon) {
-            super.setIcon(icon);
-            if (icon instanceof ImageIcon)
-            {
-                _myimage = ((ImageIcon) icon).getImage();
-            }
-        }
-
-        @Override
-        public void paint(Graphics g){
-            g.drawImage(_myimage, 0, 0, this.getWidth(), this.getHeight(), null);
-        }
-    }
 }
 

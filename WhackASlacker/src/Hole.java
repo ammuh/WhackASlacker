@@ -14,7 +14,7 @@ public class Hole extends Thread{
         mframe = main;
         game = g;
         characters = new Character[1];
-        characters[0]  = new Ammar(game, mframe, hPanel);
+        characters[0]  = new Ammar(game, mframe);
     }
 
     public void run(){
@@ -27,16 +27,8 @@ public class Hole extends Thread{
         while(game.getTime() > -1){
 
                 Character c = characters[(int)Math.random()*characters.length];
-                //c.pop(this);
-                //hPanel = new JPanel();
+                c.pop(this);
         }
-    }
-
-    public void loop(){
-
-    }
-    private void hitSound(Character c){
-
     }
 
 }
