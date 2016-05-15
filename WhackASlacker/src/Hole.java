@@ -15,11 +15,11 @@ public class Hole extends Thread{
 
     public Hole(JFrame main, GamePlay g){
         hPanel = new JPanel();
-        spriteLabel = WhackTools.getImageLabel(deskPath);
+        spriteLabel = WhackTools.getImageLabel(deskPath, 120, 150);
         hPanel.add(spriteLabel);
         mframe = main;
         game = g;
-        characters = g.getCharacters();
+        //characters = g.getCharacters();
     }
 
     public void run(){
@@ -31,8 +31,8 @@ public class Hole extends Thread{
         }
         while(game.getTime() > -1){
 
-                Character c = characters[(int)Math.random()*characters.length];
-                c.pop(this);
+                //Character c = characters[(int)Math.random()*characters.length];
+                //c.pop(this);
         }
     }
 

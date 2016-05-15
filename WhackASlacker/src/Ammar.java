@@ -49,17 +49,13 @@ public class Ammar extends Character {
     @Override
     public void aniUp(Hole h) {
         JLabel l = h.getLabel();
-        while(){
 
-        }
     }
 
     @Override
     public void aniDown(Hole h) {
         JLabel l = h.getLabel();
-        while(){
 
-        }
     }
 
     @Override

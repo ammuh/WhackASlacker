@@ -27,7 +27,7 @@ public abstract class Character {
                 if(!slackerHit) {
                     reward(game);
                     slackerHit = true;
-                    aniDown(hole.getLabel());
+                    aniDown(hole);
                     setPopStatus(false);
                 }
             }

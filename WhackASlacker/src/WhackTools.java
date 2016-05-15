@@ -75,6 +75,14 @@ public abstract class WhackTools {
         }
     }
 
+    public static JLabel getImageLabel(String path, int w, int h){
+        JLabel picLabel;
+        BufferedImage pic = WhackTools.scaleImage(w, h, path);
+        picLabel = new JLabel(new ImageIcon(pic));
+        return picLabel;
+
+    }
+
     public static void playSound(String path) {
         new Thread(new Runnable() {
             // The wrapper thread is unnecessary, unless it blocks on the

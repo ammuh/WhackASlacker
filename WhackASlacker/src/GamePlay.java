@@ -22,7 +22,7 @@ public class GamePlay{
     private JTextArea scoreField;
     private Hole[] holeThreads = new Hole[12];
 
-    private final Character[] characters;
+    //private final Character[] characters;
 
     public GamePlay(WhackASlacker w){
         //Initialize game vars and essential UI vars
@@ -54,9 +54,9 @@ public class GamePlay{
         JPanel game = new JPanel(new BorderLayout());
         JPanel grid = new JPanel(new GridLayout(3,4, 0, 0));
 
-        characters = new Character[1];
-        characters[0]  = new Ammar(this, frame);
-        Character.setHoleWH(150,100);
+        //characters = new Character[1];
+        //characters[0]  = new Ammar(this, frame);
+        Character.setHoleWH(120,150);
         Character.setGame(this);
 
         for (int i = 0; i < 12; i++){
@@ -111,9 +111,9 @@ public class GamePlay{
 
     }
 
-    public Character[] getCharacters(){
+    /*public Character[] getCharacters(){
         return characters;
-    }
+    }*/
 
     public synchronized void addPoints(int num){
         score += num;
