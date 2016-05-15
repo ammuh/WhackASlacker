@@ -20,8 +20,9 @@ public class GamePlay{
     private boolean gameRunning;
     private JTextArea timeField;
     private JTextArea scoreField;
-    private JLayeredPane[] holes = new JLayeredPane[12];
     private Hole[] holeThreads = new Hole[12];
+
+    private final Character[] characters;
 
     public GamePlay(WhackASlacker w){
         //Initialize game vars and essential UI vars
@@ -53,24 +54,15 @@ public class GamePlay{
         JPanel game = new JPanel(new BorderLayout());
         JPanel grid = new JPanel(new GridLayout(3,4, 0, 0));
 
-        JPanel[] j = new JPanel[12];
+        characters = new Character[1];
+        characters[0]  = new Ammar(this, frame);
+        Character.setHoleWH(150,100);
+        Character.setGame(this);
 
         for (int i = 0; i < 12; i++){
-            JLayeredPane l = new JLayeredPane();
-            l.setPreferredSize(new Dimension(150,100));
-            JPanel pan = new JPanel(){
-                @Override
-                public Dimension getPreferredSize() {
-                    return new Dimension(150, 100);
-                };
-            };
-            l.setBounds(0, 0, 150, 100);
-            JLabel jl = new JLabel();
-            jl.setBounds(0,0,150,100);
-            //jl.setIcon(new ImageIcon(ImgUtils.scaleImage(150, 100, "src/res/img/desk.png")));
-            //l.add(new JLabel(new ImageIcon(ImgUtils.scaleImage(150, 100 ,"src/res/img/ammar.png"))), new Integer(0), 0);
-            l.add(pan, new Integer(0), 0);
-            grid.add(l);
+            Hole h = new Hole(frame, this);
+            grid.add(h.gethPanel());
+            holeThreads[i] = h;
         }
 
 
@@ -119,7 +111,9 @@ public class GamePlay{
 
     }
 
-
+    public Character[] getCharacters(){
+        return characters;
+    }
 
     public synchronized void addPoints(int num){
         score += num;

@@ -26,6 +26,7 @@ public class Ammar extends Character {
     private final int points = 10;
     private final int timeUp = 1000; //Time in Milliseconds
     private final int ranking = 1;
+    private boolean isUp =false;
 
     public Ammar(GamePlay g, JFrame fr){
         game = g;
@@ -40,41 +41,25 @@ public class Ammar extends Character {
         spriteFrames = getBufferedFrames(img, numFrames, fheight, fwidth);
     }
 
-    /*public void pop(Thread t){
-        frame.setVisible(true);
-        panel.setText(" POP ");
+    @Override
+    public void reward(GamePlay g) {
+        g.addPoints(points);
+    }
 
-        MouseAdapter m = new MouseAdapter()
-        {
-            boolean slackerHit = false;
-            public void mouseClicked(MouseEvent e)
-            {
-                if(!slackerHit) {
-                    game.addPoints(getPointValue());
-                    slackerHit = true;
-                }
-            }
-        };
-        panel.addMouseListener(m);
+    @Override
+    public void aniUp(JLabel l) {
 
-        try {
-            t.sleep(getTimeUp());
-        } catch (InterruptedException e) {
-            // Should not happen
-            throw new AssertionError(e);
-        }
+    }
 
-        panel.removeMouseListener(m);
-        panel.setText("_______");
+    @Override
+    public void aniDown(JLabel l) {
 
-        try {
-            t.sleep((int)(Math.random()*3000));
-        } catch (InterruptedException e) {
-            // Should not happen
-            throw new AssertionError(e);
-        }
-    }*/
+    }
 
+    @Override
+    public void setPopStatus(Boolean b) {
+        isUp = b;
+    }
 
 
     @Override

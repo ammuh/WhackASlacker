@@ -13,34 +13,44 @@ public abstract class Character {
 
     private static int holeWidth = 0;
     private static int holeHeight = 0;
+    private static GamePlay game;
 
-    public void pop(Thread t, HoleSprite h){
+
+    public void pop(Hole hole){
         WhackTools.playSound(getSoundPath());
+        //Mouse Adapter handles hit on
         MouseAdapter m = new MouseAdapter()
         {
             boolean slackerHit = false;
             public void mouseClicked(MouseEvent e)
             {
                 if(!slackerHit) {
-                    game.addPoints(getPointValue());
+                    reward(game);
                     slackerHit = true;
+                    aniDown(hole.getLabel());
+                    setPopStatus(false);
                 }
             }
         };
-        h.addMouseListener(m);
+
+        aniUp(hole.getLabel());
+        hole.getLabel().addMouseListener(m);
         try {
-            t.sleep(getTimeUp());
+            hole.sleep(getTimeUp());
         } catch (InterruptedException e) {
             // Should not happen
             throw new AssertionError(e);
         }
-        h.removeMouseListener(m);
+        hole.getLabel().removeMouseListener(m);
+        aniDown(hole.getLabel());
+
         try {
-            t.sleep((int)(Math.random()*3000));
+            hole.sleep((int)(Math.random()*3000));
         } catch (InterruptedException e) {
             System.out.println(e);
         }
     }
+
     public BufferedImage[] getBufferedFrames(BufferedImage pic, int numFrames, int fheight, int fwidth){
         BufferedImage[] b = new BufferedImage[numFrames];
         int rows = pic.getHeight()/fheight;
@@ -50,7 +60,7 @@ public abstract class Character {
         for(int row = 0; row < rows; row++){
             for(int col = 0; col < cols; col++){
                 if(!(row == rows - 1 && col > (numFrames%cols)-1)){
-                    b[pos] = WhackTools.scaleImage( holeWidth, holeHeight, pic.getSubimage(col*fheight, row*fheight, fwidth, fheight));
+                    b[pos] = WhackTools.scaleImage(holeWidth, holeHeight, pic.getSubimage(col*fheight, row*fheight, fwidth, fheight));
                     pos++;
                 }
             }
@@ -66,7 +76,14 @@ public abstract class Character {
             holeHeight = h;
         }
     }
+    public static void setGame(GamePlay g){
+        game = g;
+    }
 
+    public abstract void reward(GamePlay g);
+    public abstract void aniUp(JLabel l);
+    public abstract void aniDown(JLabel l);
+    public abstract void setPopStatus(Boolean b);
     public abstract String getSoundPath();
     public abstract String getSpritePath();
     public abstract int getPointValue();

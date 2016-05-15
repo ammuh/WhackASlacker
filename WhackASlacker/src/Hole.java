@@ -4,17 +4,22 @@ import javax.swing.*;
  * Created by ammu on 5/8/16.
  */
 public class Hole extends Thread{
-	JLayeredPane hPanel;
-     JFrame mframe;
-     GamePlay game;
+	JPanel hPanel;
+    JLabel spriteLabel;
+    JFrame mframe;
+    GamePlay game;
+    HoleSprite sprite;
     private Character[] characters;
-    public Hole(JLayeredPane hole, JFrame main, GamePlay g){
 
-        hPanel = hole;
+    private final String deskPath = "src/res/img/desk.png";
+
+    public Hole(JFrame main, GamePlay g){
+        hPanel = new JPanel();
+        spriteLabel = WhackTools.getImageLabel(deskPath);
+        hPanel.add(spriteLabel);
         mframe = main;
         game = g;
-        characters = new Character[1];
-        characters[0]  = new Ammar(game, mframe);
+        characters = g.getCharacters();
     }
 
     public void run(){
@@ -31,4 +36,10 @@ public class Hole extends Thread{
         }
     }
 
+    public JPanel gethPanel(){
+        return this.hPanel;
+    }
+    public JLabel getLabel(){
+        return this.spriteLabel;
+    }
 }
