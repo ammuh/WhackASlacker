@@ -11,15 +11,15 @@ import java.io.IOException;
  */
 public abstract class Character {
 
-    private static int holeWidth = 0;
-    private static int holeHeight = 0;
+    private static int holeWidth = 120;
+    private static int holeHeight = 150;
     private static GamePlay game;
 
 
     public void pop(Hole hole){
         WhackTools.playSound(getSoundPath());
         //Mouse Adapter handles hit on
-        MouseAdapter m = new MouseAdapter()
+        /*MouseAdapter m = new MouseAdapter()
         {
             boolean slackerHit = false;
             public void mouseClicked(MouseEvent e)
@@ -31,17 +31,17 @@ public abstract class Character {
                     setPopStatus(false);
                 }
             }
-        };
+        };*/
 
         aniUp(hole);
-        hole.getLabel().addMouseListener(m);
+        //hole.getLabel().addMouseListener(m);
         try {
             hole.sleep(getTimeUp());
         } catch (InterruptedException e) {
             // Should not happen
             throw new AssertionError(e);
         }
-        hole.getLabel().removeMouseListener(m);
+        //hole.getLabel().removeMouseListener(m);
         aniDown(hole);
 
         try {
@@ -60,7 +60,7 @@ public abstract class Character {
         for(int row = 0; row < rows; row++){
             for(int col = 0; col < cols; col++){
                 if(!(row == rows - 1 && col > (numFrames%cols)-1)){
-                    b[pos] = WhackTools.scaleImage(holeWidth, holeHeight, pic.getSubimage(col*fheight, row*fheight, fwidth, fheight));
+                    b[pos] = WhackTools.scaleImage(holeWidth, holeHeight, pic.getSubimage(col*fwidth, row*fheight, fwidth, fheight));
                     pos++;
                 }
             }
