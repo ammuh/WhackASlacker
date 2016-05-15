@@ -40,11 +40,7 @@ public class Ammar extends Character {
         spriteFrames = getBufferedFrames(img, numFrames, fheight, fwidth);
     }
 
-    public void pop(Thread t, HoleSprite h){
-        WhackTools.playSound(getSoundPath());
-    }
-
-    public void pop(Thread t){
+    /*public void pop(Thread t){
         frame.setVisible(true);
         panel.setText(" POP ");
 
@@ -77,7 +73,7 @@ public class Ammar extends Character {
             // Should not happen
             throw new AssertionError(e);
         }
-    }
+    }*/
 
 
 
