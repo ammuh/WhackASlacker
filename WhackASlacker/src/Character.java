@@ -34,7 +34,7 @@ public abstract class Character {
         };*/
 
         aniUp(hole);
-        setPopStatus(true);
+        hole.setPopStatus(true);
         //hole.getLabel().addMouseListener(m);
         try {
             hole.sleep(getTimeUp());
@@ -44,7 +44,7 @@ public abstract class Character {
         }
         //hole.getLabel().removeMouseListener(m);
         aniDown(hole);
-        setPopStatus(false);
+        hole.setPopStatus(false);
 
         try {
             hole.sleep((int)(Math.random()*5000)+4000);
@@ -85,7 +85,6 @@ public abstract class Character {
     public abstract void reward(GamePlay g);
     public abstract void aniUp(Hole h);
     public abstract void aniDown(Hole h);
-    public abstract void setPopStatus(Boolean b);
     public abstract String getSoundPath();
     public abstract String getSpritePath();
     public abstract int getPointValue();

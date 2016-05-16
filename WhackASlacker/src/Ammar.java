@@ -32,7 +32,6 @@ public class Ammar extends Character {
     private final int points = 10;
     private final int timeUp = 1000; //Time in Milliseconds
     private final int ranking = 1;
-    private volatile boolean isUp = false;
 
     public Ammar(GamePlay g, JFrame fr){
         game = g;
@@ -80,10 +79,7 @@ public class Ammar extends Character {
         }
     }
 
-    @Override
-    public void setPopStatus(Boolean b) {
-        isUp = b;
-    }
+
 
 
     @Override

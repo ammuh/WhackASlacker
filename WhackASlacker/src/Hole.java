@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Created by ammu on 5/8/16.
@@ -10,6 +11,8 @@ public class Hole extends Thread{
     GamePlay game;
     HoleSprite sprite;
     private Character[] characters;
+    private volatile boolean isUp = false;
+    private volatile ArrayList<Character> queue = new ArrayList<Character>();
 
     private final String deskPath = "src/res/img/desk.png";
 
@@ -23,19 +26,32 @@ public class Hole extends Thread{
     }
 
     public void run(){
-        try {
-            this.sleep((int)(Math.random()*6000)+1500);
-        } catch (InterruptedException e) {
-            // Should not happen
-            throw new AssertionError(e);
-        }
         while(game.getTime() > -1){
-
-            Character c = characters[(int)Math.random()*characters.length];
-            c.pop(this);
+            if(queueSize() > 0){
+                synchronized (queue){
+                    Character c = queue.remove(0);
+                    c.pop(this);
+                }
+            }
+        }
+    }
+    public int queueSize(){
+        synchronized (queue){
+            return queue.size();
+        }
+    }
+    public void queue(Character c){
+        synchronized (queue) {
+            queue.add(c);
         }
     }
 
+    public boolean isUp(){
+        return isUp;
+    }
+    public void setPopStatus(boolean b){
+        isUp = b;
+    }
     public JPanel gethPanel(){
         return this.hPanel;
     }

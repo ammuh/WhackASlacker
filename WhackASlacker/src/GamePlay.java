@@ -30,7 +30,7 @@ public class GamePlay{
         //Initialize game vars and essential UI vars
         frame = w.getFrame();
         score = 0;
-        time = 30;
+        time = 100;
 
         JPanel info = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 10));
         //Info Layout
@@ -105,14 +105,27 @@ public class GamePlay{
         Thread queueChar = new Thread(new Runnable() {
             @Override
             public void run() {
+                ArrayList<Hole> l = new ArrayList<Hole>(Arrays.asList(holeThreads));
                 while (gameRunning){
-                    ArrayList<Hole> l = new ArrayList<Hole>(Arrays.asList(holeThreads));
-                    Hole h = holeThreads[(int)Math.random()*holeThreads.length];
-                    for(){
-
+                    Hole[] holesToAni = new Hole[(int)Math.random()*4+1];
+                    for(int i = 0; i < holesToAni.length; i++){
+                        holesToAni[i] = l.remove((int)Math.random()*l.size());
                     }
-
+                    for(int i = 0; i < holesToAni.length; i++){
+                        holesToAni[i].queue(characters[(int)Math.random()*characters.length]);
+                    }
+                    while(!popComplete(holesToAni)){
+                        try{Thread.sleep(100);}catch (InterruptedException i){i.printStackTrace();}
+                    }
                 }
+            }
+            private boolean popComplete(Hole[] h){
+                for(Hole hole : h){
+                    if(!hole.isUp()){
+                        return false;
+                    }
+                }
+                return true;
             }
         });
 
@@ -122,6 +135,7 @@ public class GamePlay{
         }
         queueChar.start();
     }
+
 
     public void gameEnd(){
 
