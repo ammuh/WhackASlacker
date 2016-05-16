@@ -24,7 +24,7 @@ public class Hole extends Thread{
 
     public void run(){
         try {
-            this.sleep((int)(Math.random()*3000));
+            this.sleep((int)(Math.random()*6000)+1500);
         } catch (InterruptedException e) {
             // Should not happen
             throw new AssertionError(e);

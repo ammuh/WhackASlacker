@@ -18,11 +18,11 @@ public class Ammar extends Character {
     private final String soundPath = "res/aud/pop.wav";
     //Sprites
     private final String imgPath = "src/res/img/ammarSprites.png";
-    private final BufferedImage[] spriteFrames;
+    private final ImageIcon[] spriteFrames;
     private final int numFrames = 20;
-    private final int fheight = 500;
-    private final int fwidth = 400;
-    private final int frameRate = 30;
+    private final int fheight = 188;
+    private final int fwidth = 150;
+    private final int frameRate = 20;
     //Sprite Animation Info
     private  final int upStart = 0;
     private final int upEnd = 9;
@@ -32,7 +32,7 @@ public class Ammar extends Character {
     private final int points = 10;
     private final int timeUp = 1000; //Time in Milliseconds
     private final int ranking = 1;
-    private boolean isUp =false;
+    private volatile boolean isUp = false;
 
     public Ammar(GamePlay g, JFrame fr){
         game = g;
@@ -56,7 +56,7 @@ public class Ammar extends Character {
     public void aniUp(Hole h) {
         int pos = upStart;
         while(pos < upEnd){
-            h.getLabel().setIcon(new ImageIcon(spriteFrames[pos]));
+            h.getLabel().setIcon(spriteFrames[pos]);
             try{
                 h.sleep(1000/frameRate);
             }catch (InterruptedException i){
@@ -70,7 +70,7 @@ public class Ammar extends Character {
     public void aniDown(Hole h) {
         int pos = downStart;
         while(pos > downEnd){
-            h.getLabel().setIcon(new ImageIcon(spriteFrames[pos]));
+            h.getLabel().setIcon(spriteFrames[pos]);
             try{
                 h.sleep(1000/frameRate);
             }catch (InterruptedException i){

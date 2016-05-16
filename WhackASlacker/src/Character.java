@@ -17,7 +17,7 @@ public abstract class Character {
 
 
     public void pop(Hole hole){
-        WhackTools.playSound(getSoundPath());
+        //WhackTools.playSound(getSoundPath());
         //Mouse Adapter handles hit on
         /*MouseAdapter m = new MouseAdapter()
         {
@@ -34,6 +34,7 @@ public abstract class Character {
         };*/
 
         aniUp(hole);
+        setPopStatus(true);
         //hole.getLabel().addMouseListener(m);
         try {
             hole.sleep(getTimeUp());
@@ -43,16 +44,17 @@ public abstract class Character {
         }
         //hole.getLabel().removeMouseListener(m);
         aniDown(hole);
+        setPopStatus(false);
 
         try {
-            hole.sleep((int)(Math.random()*3000));
+            hole.sleep((int)(Math.random()*5000)+4000);
         } catch (InterruptedException e) {
             System.out.println(e);
         }
     }
 
-    public BufferedImage[] getBufferedFrames(BufferedImage pic, int numFrames, int fheight, int fwidth){
-        BufferedImage[] b = new BufferedImage[numFrames];
+    public ImageIcon[] getBufferedFrames(BufferedImage pic, int numFrames, int fheight, int fwidth){
+        ImageIcon[] b = new ImageIcon[numFrames];
         int rows = pic.getHeight()/fheight;
         int cols = pic.getWidth()/fwidth;
         System.out.println(rows + " and " + cols);
@@ -60,7 +62,7 @@ public abstract class Character {
         for(int row = 0; row < rows; row++){
             for(int col = 0; col < cols; col++){
                 if(!(row == rows - 1 && col > (numFrames%cols)-1)){
-                    b[pos] = WhackTools.scaleImage(holeWidth, holeHeight, pic.getSubimage(col*fwidth, row*fheight, fwidth, fheight));
+                    b[pos] = new ImageIcon(WhackTools.scaleImage(holeWidth, holeHeight, pic.getSubimage(col*fwidth, row*fheight, fwidth, fheight)));
                     pos++;
                 }
             }

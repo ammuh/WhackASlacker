@@ -11,6 +11,8 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GamePlay{
     //Game Stats
@@ -100,12 +102,25 @@ public class GamePlay{
                 gameEnd();
             }
         });
+        Thread queueChar = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (gameRunning){
+                    ArrayList<Hole> l = new ArrayList<Hole>(Arrays.asList(holeThreads));
+                    Hole h = holeThreads[(int)Math.random()*holeThreads.length];
+                    for(){
+
+                    }
+
+                }
+            }
+        });
 
         timerThread.start();
-
         for (Hole h : holeThreads) {
             h.start();
         }
+        queueChar.start();
     }
 
     public void gameEnd(){
