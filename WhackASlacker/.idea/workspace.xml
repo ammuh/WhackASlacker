@@ -44,18 +44,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-702">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+            <state relative-caret-position="216">
+              <caret line="74" column="100" selection-start-line="74" selection-start-column="100" selection-end-line="74" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2499#2505#0" expanded="true" />
-                <element signature="e#4690#4691#0" expanded="true" />
-                <element signature="e#4717#4718#0" expanded="true" />
-                <element signature="e#4745#4746#0" expanded="true" />
-                <element signature="e#4773#4774#0" expanded="true" />
+                <element signature="e#3410#3416#0" expanded="true" />
+                <element signature="e#6241#6242#0" expanded="true" />
+                <element signature="e#6268#6269#0" expanded="true" />
+                <element signature="e#6364#6365#0" expanded="true" />
+                <element signature="e#6392#6393#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,7 +64,7 @@
       <file leaf-file-name="Hole.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hole.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="378">
               <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,8 +78,8 @@
       <file leaf-file-name="Ani.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ani.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="1458">
+              <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1370#1371#0" expanded="true" />
@@ -129,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ammar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ammar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ammar.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
@@ -168,12 +168,12 @@
         <option value="$PROJECT_DIR$/src/HoleSprite.java" />
         <option value="$PROJECT_DIR$/src/WhackASlacker.java" />
         <option value="$PROJECT_DIR$/src/Hole.java" />
-        <option value="$PROJECT_DIR$/src/GamePlay.java" />
         <option value="$PROJECT_DIR$/src/Character.java" />
         <option value="$PROJECT_DIR$/src/Ani.java" />
         <option value="$PROJECT_DIR$/src/Umesh.java" />
         <option value="$PROJECT_DIR$/src/Charlie.java" />
         <option value="$PROJECT_DIR$/src/Ammar.java" />
+        <option value="$PROJECT_DIR$/src/GamePlay.java" />
       </list>
     </option>
   </component>
@@ -777,12 +777,12 @@
       <workItem from="1463117541275" duration="25701000" />
       <workItem from="1463291995393" duration="909000" />
       <workItem from="1463293209256" duration="14257000" />
-      <workItem from="1463343152086" duration="32081000" />
+      <workItem from="1463343152086" duration="32660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115112000" />
+    <option name="totallyTimeSpent" value="115691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -796,8 +796,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21013413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33084947" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21013413" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33084947" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2567256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -862,11 +862,11 @@
           <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2499#2505#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
+            <element signature="e#3410#3416#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6392#6393#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,11 +908,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2499#2505#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
+            <element signature="e#3410#3416#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6392#6393#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -993,11 +993,11 @@
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2499#2505#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
+            <element signature="e#3410#3416#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6392#6393#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1078,11 +1078,11 @@
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2499#2505#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
+            <element signature="e#3410#3416#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6392#6393#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1204,64 +1204,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WhackASlacker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#803#813#0" expanded="true" />
-            <element signature="e#3905#3906#0" expanded="true" />
-            <element signature="e#3956#3957#0" expanded="true" />
-            <element signature="e#4462#4472#0" expanded="true" />
-            <element signature="e#4892#4893#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#5480#5490#0" expanded="true" />
-            <element signature="e#5543#5553#0" expanded="true" />
-            <element signature="method#merge#0;class#WhackASlacker#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#270#281#0" expanded="true" />
-            <element signature="e#350#359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-702">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2499#2505#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4773#4774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ani.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Umesh.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1270,16 +1212,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1370#1371#0" expanded="true" />
             <element signature="e#1405#1406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1302,6 +1234,74 @@
           <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WhackASlacker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#803#813#0" expanded="true" />
+            <element signature="e#3905#3906#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="e#4462#4472#0" expanded="true" />
+            <element signature="e#4892#4893#0" expanded="true" />
+            <element signature="e#4939#4940#0" expanded="true" />
+            <element signature="e#5480#5490#0" expanded="true" />
+            <element signature="e#5543#5553#0" expanded="true" />
+            <element signature="method#merge#0;class#WhackASlacker#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ani.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#270#281#0" expanded="true" />
+            <element signature="e#350#359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GamePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="74" column="100" selection-start-line="74" selection-start-column="100" selection-end-line="74" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3410#3416#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6392#6393#0" expanded="true" />
           </folding>
         </state>
       </provider>

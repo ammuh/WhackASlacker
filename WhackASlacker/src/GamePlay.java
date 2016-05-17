@@ -10,6 +10,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * GamePlay class is instantiated each game and is used to contain game information and handle the graphics and points for each run.
+ */
 public class GamePlay{
     //Game Stats
     private volatile int score = 0;
@@ -20,9 +23,15 @@ public class GamePlay{
     private JTextArea scoreField;
     public Hole[] holeThreads;
     private Component[] components;
-
+    //Manifest of characters
     private final Character[] characters;
 
+    /**
+     * Constructor - Initializes GamePlay, must create character manifest here, and new threads if this is not the first game.
+     * @param w WhackaSlacker instance for frame and other general info
+     * @param threads Threads that were spawned for each hole
+     * @param c Essential GUI components that need to be manipulated
+     */
     public GamePlay(WhackASlacker w, Hole[] threads, Component[] c){
         components = c;
         //Initialize game vars and essential UI vars
@@ -51,6 +60,9 @@ public class GamePlay{
         scoreField = (JTextArea) components[1];
     }
 
+    /**
+     * Starts the actual GamePlay. Buttons are disabled, timer and queuing thread is created and started.
+     */
     public void begin(){
         gameRunning = true;
         components[2].setEnabled(false);
@@ -59,6 +71,9 @@ public class GamePlay{
 
         Thread timerThread = new Thread(new Runnable() {
             @Override
+            /**
+             * This is a thread that is used to keep the game time and determine when the game ends.
+             */
             public void run() {
                 int temp = time;
                 while (time > -1) {
@@ -77,6 +92,9 @@ public class GamePlay{
 
         Thread queueChar = new Thread(new Runnable() {
             @Override
+            /**
+             * This method is the queuing algorithim that queues Characters to holes in groups of 3 or less.
+             */
             public void run() {
                 ArrayList<Hole> l = new ArrayList<Hole>(Arrays.asList(holeThreads));
                 while (gameRunning){
@@ -105,6 +123,11 @@ public class GamePlay{
                 }
             }
 
+            /**
+             * Helper method used to check if a group is finished popping up and down.
+             * @param h Group of threads that were queued.
+             * @return If pop is complete
+             */
             private boolean popComplete(Hole[] h){
                 for(Hole hole : h){
                     if(hole.isUp()){
@@ -115,15 +138,17 @@ public class GamePlay{
             }
         });
 
-        timerThread.start();
+        timerThread.start(); //Start the timer thread.
         for (Hole h : holeThreads) {
             h.setGame(this);
-            h.start();
+            h.start(); //Starts Hole threads to recieve character objects.
         }
-        queueChar.start();
+        queueChar.start(); //Start queuing mechanism to send Characters to different Holes.
     }
 
-
+    /**
+     * Renables buttons and resets game.
+     */
     public void gameEnd(){
         gameRunning = false;
         components[2].setEnabled(true);
@@ -131,22 +156,36 @@ public class GamePlay{
 
     }
 
-    public Character[] getCharacters(){
-        return characters;
-    }
-
+    /**
+     * Adds points synchronously to avoid memory overwrites.
+     * @param num Number of points.
+     */
     public synchronized void addPoints(int num){
         score += num;
         scoreField.setText("" + score);
     }
+
+    /**
+     * Adds time synchronously to avoid memory overwrites.
+     * @param num Amount of time.
+     */
     public synchronized void addTime(int num){
         time += num;
         scoreField.setText("" + score);
     }
+
+    /**
+     * Gets the current game time.
+     * @return time
+     */
     public synchronized int getTime(){
         return time;
     }
 
+    /**
+     * Gets the current score.
+     * @return score
+     */
     public int getScore(){
         return score;
     }
