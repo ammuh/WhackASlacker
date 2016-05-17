@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class GamePlay{
     //Game Stats
     private volatile int score = 0;
-    private volatile int time = 5;
+    private volatile int time = 100;
     private JFrame frame;
     private boolean gameRunning;
     private JTextArea timeField;
@@ -33,8 +33,10 @@ public class GamePlay{
         //Initialize game vars and essential UI vars
         frame = w.getFrame();
         //Character Manifest
-        characters = new Character[1];
+        characters = new Character[2];
         characters[0]  = new Ammar(this, frame);
+        characters[1] = new Ani(this, frame);
+
         Character.setHoleWH(120,150);
         Character.setGame(this);
         //UI Elements
