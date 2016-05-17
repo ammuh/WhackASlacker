@@ -135,6 +135,9 @@ public class WhackASlacker{
         mainFrame.setVisible(true);
     }
 
+    /**
+     * Brings up leaderboard screen of highest scored games in the last few games.
+     */
     public void leaderBoardScreen(){
         JPanel j = new JPanel();
         j.setLayout(new BoxLayout(j, BoxLayout.Y_AXIS));
@@ -174,6 +177,11 @@ public class WhackASlacker{
         return games;
     }
 
+    /**
+     * Recursive sorting algorithim used to sort Games based on points.
+     * @param whole whole Array
+     * @return sorted Array
+     */
     private ArrayList<GamePlay> mergeSort(ArrayList<GamePlay> whole) {
         if(whole.size() == 0){
             return whole;
@@ -205,6 +213,13 @@ public class WhackASlacker{
         }
         return whole;
     }
+
+    /**
+     * helper method to merge two arrays into one.
+     * @param left left index
+     * @param right right index
+     * @param whole whole Array
+     */
     private void merge(ArrayList<GamePlay> left, ArrayList<GamePlay> right, ArrayList<GamePlay> whole) {
         int leftIndex = 0;
         int rightIndex = 0;

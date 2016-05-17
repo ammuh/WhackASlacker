@@ -7,18 +7,20 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by ammu on 5/7/16.
+ * Abstract class for every character to extend and implement given methods.
  */
 public abstract class Character {
-
+    // Global variables for character class.
     private static int holeWidth = 120;
     private static int holeHeight = 150;
     private static GamePlay game;
 
-
+    /**
+     * Constructor - Goes through pop animation for character.
+     * @param hole Hole that will be popped with character.
+     */
     public void pop(Hole hole){
-        //WhackTools.playSound(getSoundPath());
-        //Mouse Adapter handles hit on
+        WhackTools.playSound(getSoundPath());
         MouseAdapter m = new MouseAdapter()
         {
             boolean slackerHit = false;
@@ -49,6 +51,14 @@ public abstract class Character {
         hole.setPopStatus(false);
     }
 
+    /**
+     * Helper method used to obtain the given frames from a sprite sheet.
+     * @param pic Buffered sprite sheet.
+     * @param numFrames Number of frames in the sprite sheet.
+     * @param fheight frame height
+     * @param fwidth frame width
+     * @return Array of frames for animation.
+     */
     public ImageIcon[] getBufferedFrames(BufferedImage pic, int numFrames, int fheight, int fwidth){
         ImageIcon[] b = new ImageIcon[numFrames];
         int rows = pic.getHeight()/fheight;
