@@ -11,40 +11,51 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GamePlay{
     //Game Stats
-    private volatile int score;
-    private volatile int time;
+    private volatile int score = 0;
+    private volatile int time = 5;
     private JFrame frame;
     private boolean gameRunning;
     private JTextArea timeField;
     private JTextArea scoreField;
-    private Hole[] holeThreads;
+    public Hole[] holeThreads;
+    private Component[] components;
 
     private final Character[] characters;
 
-    public GamePlay(WhackASlacker w, Hole[] threads, Component[] components){
+    public GamePlay(WhackASlacker w, Hole[] threads, Component[] c){
+        components = c;
         //Initialize game vars and essential UI vars
         frame = w.getFrame();
-        score = 0;
-        time = 100;
         //Character Manifest
         characters = new Character[1];
         characters[0]  = new Ammar(this, frame);
         Character.setHoleWH(120,150);
         Character.setGame(this);
         //UI Elements
-        holeThreads = threads;
+        if(w.getGames().size() < 1){
+
+            holeThreads = threads;
+        }else{
+            this.holeThreads = new Hole[12];
+            Hole[] h = w.getGames().get(0).holeThreads;
+            for(int i = 0; i < h.length; i++){
+                this.holeThreads[i] = new Hole(frame, h[i].getLabel());
+            }
+        }
         timeField = (JTextArea) components[0];
         scoreField = (JTextArea) components[1];
     }
 
     public void begin(){
         gameRunning = true;
-
+        components[2].setEnabled(false);
+        components[3].setEnabled(false);
         scoreField.setText("" + score);
 
         Thread timerThread = new Thread(new Runnable() {
@@ -116,6 +127,9 @@ public class GamePlay{
 
     public void gameEnd(){
         gameRunning = false;
+        components[2].setEnabled(true);
+        components[3].setEnabled(true);
+
     }
 
     public Character[] getCharacters(){
@@ -128,10 +142,14 @@ public class GamePlay{
     }
     public synchronized void addTime(int num){
         time += num;
+        scoreField.setText("" + score);
     }
     public synchronized int getTime(){
         return time;
     }
 
+    public int getScore(){
+        return score;
+    }
 }
 

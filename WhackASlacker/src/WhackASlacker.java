@@ -19,10 +19,12 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class WhackASlacker{
 
     public JFrame mainFrame; //Frame or window that user will interact with.
+    public ArrayList<GamePlay> games = new ArrayList<GamePlay>();
 
 
     private final String deskPath = "src/res/img/desk.png";
@@ -56,11 +58,10 @@ public class WhackASlacker{
         JPanel info = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 10));
         //Info Layout
         info.setBorder(new EmptyBorder(30, 30, 30, 30));
-        info.add(Box.createHorizontalStrut(10));
 
         JButton button = new JButton("Start");
         info.add(button);
-        info.add(Box.createHorizontalStrut(100));
+        info.add(Box.createHorizontalStrut(50));
 
         JLabel timeLabel = new JLabel("Time Left:");
         info.add(timeLabel);
@@ -73,10 +74,17 @@ public class WhackASlacker{
         JLabel scoreLabel = new JLabel("Score:");
         info.add(scoreLabel);
 
+
+
+
         JTextArea scoreField = new JTextArea(1, 5);
         scoreField.setEditable(false);
         info.add(scoreField);
         scoreField.setVisible(true);
+
+        info.add(Box.createHorizontalStrut(10));
+        JButton button2 = new JButton("Leaderboard");
+        info.add(button2);
 
         JPanel game = new JPanel(new BorderLayout());
         JPanel grid = new JPanel(new GridLayout(3,4, 0, 0));
@@ -100,14 +108,22 @@ public class WhackASlacker{
         panel.add(game);
 
         WhackASlacker w = this;
-        Component[] c = {timeField, scoreField};
+        Component[] c = {timeField, scoreField, button, button2};
         //Attach event listener, therefore when clicked, the game can start
         button.addActionListener(new ActionListener() {
             @Override
 
             public void actionPerformed(ActionEvent actionEvent) {
                 GamePlay g = new GamePlay(w, holeThreads, c);
+                games.add(g);
                 g.begin();
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent actionEvent) {
+                leaderBoardScreen();
             }
         });
         info.setBackground(Color.WHITE);
@@ -119,11 +135,111 @@ public class WhackASlacker{
         mainFrame.setVisible(true);
     }
 
+    public void leaderBoardScreen(){
+        JPanel j = new JPanel();
+        j.setLayout(new BoxLayout(j, BoxLayout.Y_AXIS));
+        j.add(new JLabel("LEADERBOARDS"));
+        ArrayList<GamePlay> gTemp = new ArrayList<GamePlay>(getGames());
+        gTemp =  mergeSort(gTemp);
+
+        int rank = 1;
+        for(GamePlay g : gTemp){
+            j.add(new JLabel(rank + ". " + g.getScore() + " points"));
+            rank++;
+        }
+        JButton button = new JButton("Back");
+        j.add(button);
+
+        button.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent actionEvent) {
+                mainScreenSet();
+            }
+        });
+
+        j.setBackground(Color.WHITE);
+        mainFrame.setContentPane(j);
+        mainFrame.setVisible(true);
+
+    }
     /**
      * Retrieve frame used by game.
      * @return main game frame
      */
     public JFrame getFrame(){
         return this.mainFrame;
+    }
+    public ArrayList<GamePlay> getGames(){
+        return games;
+    }
+
+    private ArrayList<GamePlay> mergeSort(ArrayList<GamePlay> whole) {
+        if(whole.size() == 0){
+            return whole;
+        }
+        ArrayList<GamePlay> left = new ArrayList<GamePlay>();
+        ArrayList<GamePlay> right = new ArrayList<GamePlay>();
+        int center;
+
+        if (whole.size() == 1) {
+            return whole;
+        } else {
+            center = whole.size()/2;
+            // copy the left half of whole into the left.
+            for (int i=0; i<center; i++) {
+                left.add(whole.get(i));
+            }
+
+            //copy the right half of whole into the new arraylist.
+            for (int i=center; i<whole.size(); i++) {
+                right.add(whole.get(i));
+            }
+
+            // Sort the left and right halves of the arraylist.
+            left  = mergeSort(left);
+            right = mergeSort(right);
+
+            // Merge the results back together.
+            merge(left, right, whole);
+        }
+        return whole;
+    }
+    private void merge(ArrayList<GamePlay> left, ArrayList<GamePlay> right, ArrayList<GamePlay> whole) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int wholeIndex = 0;
+
+        // As long as neither the left nor the right ArrayList has
+        // been used up, keep taking the smaller of left.get(leftIndex)
+        // or right.get(rightIndex) and adding it at both.get(bothIndex).
+        while (leftIndex < left.size() && rightIndex < right.size()) {
+            if ( left.get(leftIndex).getScore() > right.get(rightIndex).getScore()) {
+                whole.set(wholeIndex, left.get(leftIndex));
+                leftIndex++;
+            } else {
+                whole.set(wholeIndex, right.get(rightIndex));
+                rightIndex++;
+            }
+            wholeIndex++;
+        }
+
+        ArrayList<GamePlay> rest;
+        int restIndex;
+        if (leftIndex >= left.size()) {
+            // The left ArrayList has been use up...
+            rest = right;
+            restIndex = rightIndex;
+        } else {
+            // The right ArrayList has been used up...
+            rest = left;
+            restIndex = leftIndex;
+        }
+
+        // Copy the rest of whichever ArrayList (left or right) was not used up.
+        for (int i=restIndex; i<rest.size(); i++) {
+            whole.set(wholeIndex, rest.get(i));
+            wholeIndex++;
+        }
     }
 }
