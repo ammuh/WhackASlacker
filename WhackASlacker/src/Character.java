@@ -32,10 +32,12 @@ public abstract class Character {
                 }
             }
         };
-
-        aniUp(hole);
         hole.setPopStatus(true);
+        aniUp(hole);
         hole.getLabel().addMouseListener(m);
+
+
+
         try {
             hole.sleep(getTimeUp());
         } catch (InterruptedException e) {

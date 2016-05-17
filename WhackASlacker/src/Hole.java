@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.util.ArrayList;
 
-/**
- * Created by ammu on 5/8/16.
- */
+
 public class Hole extends Thread{
 	JPanel hPanel;
     JLabel spriteLabel;

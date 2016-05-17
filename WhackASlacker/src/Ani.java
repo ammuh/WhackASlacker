@@ -26,8 +26,8 @@ public class Ani extends Character {
     private final int downStart = 28;
     private final int downEnd = 0;
     //GamePlay Info
-    private final int points = 10;
-    private final int timeUp = 1000; //Time in Milliseconds
+    private final int points = 40;
+    private final int timeUp = 1500; //Time in Milliseconds
     private final int ranking = 1;
 
     public Ani(GamePlay g, JFrame fr){
@@ -52,7 +52,7 @@ public class Ani extends Character {
         while(pos < upEnd){
             h.getLabel().setIcon(spriteFrames[pos]);
             try{
-                h.sleep(1000/frameRate);
+                h.sleep(1000/(3*frameRate));
             }catch (InterruptedException i){
                 i.printStackTrace();
             }
@@ -62,6 +62,12 @@ public class Ani extends Character {
 
     @Override
     public void hit(Hole h) {
+        h.getLabel().setIcon(spriteFrames[spriteFrames.length-1]);
+        try{
+            h.sleep(1500);
+        }catch (InterruptedException i){
+            i.printStackTrace();
+        }
         aniDown(h);
     }
 

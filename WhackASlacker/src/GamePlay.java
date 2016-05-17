@@ -1,8 +1,3 @@
-/**
- * Created by ammu on 5/7/16.
- */
-
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.ActionEvent;
@@ -33,9 +28,11 @@ public class GamePlay{
         //Initialize game vars and essential UI vars
         frame = w.getFrame();
         //Character Manifest
-        characters = new Character[2];
+        characters = new Character[4];
         characters[0]  = new Ammar(this, frame);
         characters[1] = new Ani(this, frame);
+        characters[2] = new Charlie(this, frame);
+        characters[3] = new Umesh(this, frame);
 
         Character.setHoleWH(120,150);
         Character.setGame(this);
