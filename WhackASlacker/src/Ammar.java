@@ -13,7 +13,6 @@ public class Ammar extends Character {
     //GUI Elements
     private GamePlay game;
     private JFrame frame;
-    private HoleSprite hole;
     //Audio info
     private final String soundPath = "res/aud/pop.wav";
     //Sprites
