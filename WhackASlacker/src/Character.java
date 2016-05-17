@@ -27,22 +27,22 @@ public abstract class Character {
                 if(!slackerHit) {
                     reward(game);
                     slackerHit = true;
-                    aniDown(hole);
-                    setPopStatus(false);
+                    hit(hole);
+                    hole.setPopStatus(false);
                 }
             }
         };
 
         aniUp(hole);
         hole.setPopStatus(true);
-        //hole.getLabel().addMouseListener(m);
+        hole.getLabel().addMouseListener(m);
         try {
             hole.sleep(getTimeUp());
         } catch (InterruptedException e) {
             // Should not happen
             throw new AssertionError(e);
         }
-        //hole.getLabel().removeMouseListener(m);
+        hole.getLabel().removeMouseListener(m);
         aniDown(hole);
         hole.setPopStatus(false);
     }
@@ -78,6 +78,7 @@ public abstract class Character {
 
     public abstract void reward(GamePlay g);
     public abstract void aniUp(Hole h);
+    public abstract void hit(Hole h);
     public abstract void aniDown(Hole h);
     public abstract String getSoundPath();
     public abstract String getSpritePath();

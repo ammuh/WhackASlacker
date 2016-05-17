@@ -66,7 +66,15 @@ public class Ammar extends Character {
     }
 
     @Override
+    public void hit(Hole h) {
+        aniDown(h);
+    }
+
+    @Override
     public void aniDown(Hole h) {
+        if(!h.isUp()){
+            return;
+        }
         int pos = downStart;
         while(pos > downEnd){
             h.getLabel().setIcon(spriteFrames[pos]);

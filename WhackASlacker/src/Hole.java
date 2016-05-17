@@ -9,21 +9,13 @@ public class Hole extends Thread{
     JLabel spriteLabel;
     JFrame mframe;
     GamePlay game;
-    HoleSprite sprite;
-    private Character[] characters;
     private volatile boolean isUp = false;
     private volatile ArrayList<Character> queue = new ArrayList<Character>();
     private volatile ArrayList<Integer> timeQueue = new ArrayList<Integer>();
 
-    private final String deskPath = "src/res/img/desk.png";
-
-    public Hole(JFrame main, GamePlay g){
-        hPanel = new JPanel();
-        spriteLabel = WhackTools.getImageLabel(deskPath, 120, 150);
-        hPanel.add(spriteLabel);
+    public Hole(JFrame main, JLabel l){
+        spriteLabel = l;
         mframe = main;
-        game = g;
-        characters = g.getCharacters();
     }
 
     public void run(){
@@ -35,6 +27,9 @@ public class Hole extends Thread{
                 }
             }
         }
+    }
+    public void setGame(GamePlay g){
+        game = g;
     }
     public int queueSize(){
         synchronized (queue){
@@ -54,9 +49,10 @@ public class Hole extends Thread{
     public void setPopStatus(boolean b){
         isUp = b;
     }
-    public JPanel gethPanel(){
+    /*public JPanel gethPanel(){
         return this.hPanel;
-    }
+    }*/
+
     public JLabel getLabel(){
         return this.spriteLabel;
     }
