@@ -19,7 +19,7 @@ public abstract class Character {
     public void pop(Hole hole){
         //WhackTools.playSound(getSoundPath());
         //Mouse Adapter handles hit on
-        /*MouseAdapter m = new MouseAdapter()
+        MouseAdapter m = new MouseAdapter()
         {
             boolean slackerHit = false;
             public void mouseClicked(MouseEvent e)
@@ -31,7 +31,7 @@ public abstract class Character {
                     setPopStatus(false);
                 }
             }
-        };*/
+        };
 
         aniUp(hole);
         hole.setPopStatus(true);
@@ -45,12 +45,6 @@ public abstract class Character {
         //hole.getLabel().removeMouseListener(m);
         aniDown(hole);
         hole.setPopStatus(false);
-
-        try {
-            hole.sleep((int)(Math.random()*5000)+4000);
-        } catch (InterruptedException e) {
-            System.out.println(e);
-        }
     }
 
     public ImageIcon[] getBufferedFrames(BufferedImage pic, int numFrames, int fheight, int fwidth){

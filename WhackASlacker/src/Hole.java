@@ -13,6 +13,7 @@ public class Hole extends Thread{
     private Character[] characters;
     private volatile boolean isUp = false;
     private volatile ArrayList<Character> queue = new ArrayList<Character>();
+    private volatile ArrayList<Integer> timeQueue = new ArrayList<Integer>();
 
     private final String deskPath = "src/res/img/desk.png";
 
@@ -44,10 +45,11 @@ public class Hole extends Thread{
         synchronized (queue) {
             queue.add(c);
         }
-    }
 
-    public boolean isUp(){
-        return isUp;
+    }
+    public synchronized boolean isUp(){
+
+            return isUp;
     }
     public void setPopStatus(boolean b){
         isUp = b;

@@ -102,26 +102,40 @@ public class GamePlay{
                 gameEnd();
             }
         });
+
         Thread queueChar = new Thread(new Runnable() {
             @Override
             public void run() {
                 ArrayList<Hole> l = new ArrayList<Hole>(Arrays.asList(holeThreads));
                 while (gameRunning){
-                    Hole[] holesToAni = new Hole[(int)Math.random()*4+1];
+                    Hole[] holesToAni = new Hole[(int)(Math.random()*3)+1];
+                    System.out.println("L size: " + l.size() + " holesToAniSize: " + holesToAni.length);
                     for(int i = 0; i < holesToAni.length; i++){
-                        holesToAni[i] = l.remove((int)Math.random()*l.size());
+                        holesToAni[i] = l.remove((int)(Math.random()*l.size()));
+                    }
+                    System.out.println(Arrays.toString(holesToAni));
+                    int time = (int)Math.random()*4000 + 1;
+                    for(Hole hole : holesToAni){
+                        hole.setPopStatus(true);
                     }
                     for(int i = 0; i < holesToAni.length; i++){
-                        holesToAni[i].queue(characters[(int)Math.random()*characters.length]);
+                        holesToAni[i].queue(characters[(int)(Math.random()*characters.length)]);
                     }
                     while(!popComplete(holesToAni)){
-                        try{Thread.sleep(100);}catch (InterruptedException i){i.printStackTrace();}
                     }
+                    System.out.println("pop complete");
+                    try {
+                        Thread.sleep(time);
+                    } catch (InterruptedException e) {
+                        System.out.println(e);
+                    }
+                    l = new ArrayList<Hole>(Arrays.asList(holeThreads));
                 }
             }
+
             private boolean popComplete(Hole[] h){
                 for(Hole hole : h){
-                    if(!hole.isUp()){
+                    if(hole.isUp()){
                         return false;
                     }
                 }
@@ -138,7 +152,7 @@ public class GamePlay{
 
 
     public void gameEnd(){
-
+        gameRunning = false;
     }
 
     public Character[] getCharacters(){
