@@ -76,6 +76,11 @@ public abstract class Character {
         return b;
     }
 
+    /**
+     * Sets the global width for the hole, so each frame can be scaled to these dimensions.
+     * @param w width
+     * @param h height
+     */
     public static void setHoleWH(int w, int h){
         if(w > 0){
             holeWidth = w;
@@ -84,17 +89,66 @@ public abstract class Character {
             holeHeight = h;
         }
     }
+
+    /**
+     * Sets the GamePlay object for the characters.
+     * @param g GamePlay
+     */
     public static void setGame(GamePlay g){
         game = g;
     }
 
+    /**
+     * Sets the GamePlay variables appropriately according to the users actions.
+     * @param g GamePlay object
+     */
     public abstract void reward(GamePlay g);
+
+    /**
+     * Animates character up.
+     * @param h
+     */
     public abstract void aniUp(Hole h);
+
+    /**
+     * Handles hits on the character
+     * @param h
+     */
     public abstract void hit(Hole h);
+
+    /**
+     * Animates character down.
+     * @param h
+     */
     public abstract void aniDown(Hole h);
+
+    /**
+     * Retrieves the resource sound path for character.
+     * @return Sound path
+     */
     public abstract String getSoundPath();
+
+    /**
+     * Returns path to the Sprite
+     * @return path
+     */
     public abstract String getSpritePath();
+
+    /**
+     * Returns point value of Character
+     * @return points
+     */
     public abstract int getPointValue();
+
+    /**
+     * Gets the amount of time the Character stays up.
+     * @return time.
+     */
     public abstract int getTimeUp();
+
+    /**
+     * Gets the rank of the character.
+     * @return rank.
+     */
     public abstract int getRanking();
 }
