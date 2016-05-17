@@ -20,6 +20,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.*;
 
 public class WhackASlacker{
 
@@ -146,8 +147,9 @@ public class WhackASlacker{
         gTemp =  mergeSort(gTemp);
 
         int rank = 1;
-        for(GamePlay g : gTemp){
-            j.add(new JLabel(rank + ". " + g.getScore() + " points"));
+        Iterator<GamePlay> giter = gTemp.iterator();
+        while(giter.hasNext()){
+            j.add(new JLabel(rank + ". " + giter.next().getScore() + " points"));
             rank++;
         }
         JButton button = new JButton("Back");
